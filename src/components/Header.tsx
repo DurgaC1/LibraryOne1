@@ -7,31 +7,46 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [solutionsOpen, setSolutionsOpen] = useState(false);
   const [resourcesOpen, setResourcesOpen] = useState(false);
+
+  // NEW: help dropdown state
+  const [helpOpen, setHelpOpen] = useState(false);
+
   const location = useLocation();
   const solutionsRef = useRef<HTMLDivElement>(null);
   const resourcesRef = useRef<HTMLDivElement>(null);
+  const helpRef = useRef<HTMLDivElement>(null);
 
   // Close dropdowns when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (solutionsRef.current && !solutionsRef.current.contains(event.target as Node)) {
+      if (
+        solutionsRef.current &&
+        !solutionsRef.current.contains(event.target as Node)
+      ) {
         setSolutionsOpen(false);
       }
-      if (resourcesRef.current && !resourcesRef.current.contains(event.target as Node)) {
+
+      if (
+        resourcesRef.current &&
+        !resourcesRef.current.contains(event.target as Node)
+      ) {
         setResourcesOpen(false);
+      }
+
+      if (helpRef.current && !helpRef.current.contains(event.target as Node)) {
+        setHelpOpen(false);
       }
     };
 
     document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // Close dropdowns when route changes
+  // Close all dropdowns on route change
   useEffect(() => {
     setSolutionsOpen(false);
     setResourcesOpen(false);
+    setHelpOpen(false);
   }, [location.pathname]);
 
   const navLinks = [
@@ -54,14 +69,27 @@ const Header = () => {
     { name: "Webinar", path: "/webinar" },
   ];
 
+  // NEW: links for How can we help?
+  const helpLinks = [
+    { name: "Public Libraries", path: "/public-libraries" },
+    { name: "Academic Libraries", path: "/academic-libraries" },
+  ];
+
   const isActive = (path: string) => location.pathname === path;
-  const isSolutionsActive = location.pathname === "/solutions" || solutionsLinks.some((link) => isActive(link.path));
-  const isResourcesActive = resourcesLinks.some((link) => isActive(link.path));
+
+  const isSolutionsActive =
+    location.pathname === "/solutions" ||
+    solutionsLinks.some((link) => isActive(link.path));
+
+  const isResourcesActive = resourcesLinks.some((link) =>
+    isActive(link.path)
+  );
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 glass-effect border-b border-border">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
+
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
             <div className="w-10 h-10 hero-gradient rounded-lg flex items-center justify-center shadow-sm group-hover:shadow-md transition-shadow">
@@ -94,8 +122,8 @@ const Header = () => {
             ))}
 
             {/* Solutions Dropdown */}
-            <div 
-              className="relative" 
+            <div
+              className="relative"
               ref={solutionsRef}
               onMouseEnter={() => setSolutionsOpen(true)}
               onMouseLeave={() => setSolutionsOpen(false)}
@@ -110,17 +138,67 @@ const Header = () => {
               >
                 Solutions
                 <ChevronDown
-                  className={`w-4 h-4 transition-transform ${solutionsOpen ? "rotate-180" : ""}`}
+                  className={`w-4 h-4 transition-transform ${
+                    solutionsOpen ? "rotate-180" : ""
+                  }`}
                 />
               </Link>
+
               {solutionsOpen && (
-                <div className="absolute top-full left-0 mt-1 w-56 bg-card border border-border rounded-lg shadow-lg py-2 z-50 animate-fade-in">
+                <div className="absolute top-full left-0 mt-1 w-56 bg-card border border-border rounded-lg shadow-lg py-2 z-50">
                   {solutionsLinks.map((link) => (
                     <Link
                       key={link.path}
                       to={link.path}
                       onClick={() => setSolutionsOpen(false)}
-                      className={`block px-4 py-2 text-sm font-body transition-colors ${
+                      className={`block px-4 py-2 text-sm ${
+                        isActive(link.path)
+                          ? "text-primary bg-primary/5"
+                          : "text-foreground hover:text-primary hover:bg-secondary"
+                      }`}
+                    >
+                      {link.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* ⭐ NEW: How can we help? Dropdown */}
+            <div
+              className="relative"
+              ref={helpRef}
+              onMouseEnter={() => setHelpOpen(true)}
+              onMouseLeave={() => setHelpOpen(false)}
+            >
+              <button
+                type="button"
+                className={`px-4 py-2 rounded-md text-sm font-medium font-body flex items-center gap-1 transition-colors ${
+                  helpOpen
+                    ? "text-primary bg-primary/5"
+                    : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                }`}
+              >
+                How can we help?
+                <ChevronDown
+                  className={`w-4 h-4 transition-transform ${
+                    helpOpen ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+
+              {helpOpen && (
+                <div className="absolute top-full left-0 mt-1 w-56 bg-card border border-border rounded-lg shadow-lg py-2 z-50">
+                  <p className="px-4 py-2 text-sm font-semibold">
+                    We help...
+                  </p>
+
+                  {helpLinks.map((link) => (
+                    <Link
+                      key={link.path}
+                      to={link.path}
+                      onClick={() => setHelpOpen(false)}
+                      className={`block px-4 py-2 text-sm ${
                         isActive(link.path)
                           ? "text-primary bg-primary/5"
                           : "text-foreground hover:text-primary hover:bg-secondary"
@@ -141,8 +219,9 @@ const Header = () => {
                   e.preventDefault();
                   setResourcesOpen(!resourcesOpen);
                   setSolutionsOpen(false);
+                  setHelpOpen(false);
                 }}
-                className={`px-4 py-2 rounded-md text-sm font-medium font-body transition-colors flex items-center gap-1 ${
+                className={`px-4 py-2 rounded-md text-sm font-medium font-body flex items-center gap-1 transition-colors ${
                   isResourcesActive
                     ? "text-primary bg-primary/5"
                     : "text-muted-foreground hover:text-foreground hover:bg-muted"
@@ -150,17 +229,20 @@ const Header = () => {
               >
                 Resources
                 <ChevronDown
-                  className={`w-4 h-4 transition-transform ${resourcesOpen ? "rotate-180" : ""}`}
+                  className={`w-4 h-4 transition-transform ${
+                    resourcesOpen ? "rotate-180" : ""
+                  }`}
                 />
               </button>
+
               {resourcesOpen && (
-                <div className="absolute top-full left-0 mt-1 w-56 bg-card border border-border rounded-lg shadow-lg py-2 z-50 animate-fade-in">
+                <div className="absolute top-full left-0 mt-1 w-56 bg-card border border-border rounded-lg shadow-lg py-2 z-50">
                   {resourcesLinks.map((link) => (
                     <Link
                       key={link.path}
                       to={link.path}
                       onClick={() => setResourcesOpen(false)}
-                      className={`block px-4 py-2 text-sm font-body transition-colors ${
+                      className={`block px-4 py-2 text-sm ${
                         isActive(link.path)
                           ? "text-primary bg-primary/5"
                           : "text-foreground hover:text-primary hover:bg-secondary"
@@ -201,7 +283,7 @@ const Header = () => {
           </button>
         </div>
 
-        {/* Mobile Menu */}
+        {/* MOBILE MENU */}
         {mobileMenuOpen && (
           <div className="md:hidden py-4 border-t border-border">
             <nav className="flex flex-col gap-2">
@@ -210,7 +292,7 @@ const Header = () => {
                   key={link.path}
                   to={link.path}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`px-4 py-3 rounded-md text-sm font-medium font-body transition-colors ${
+                  className={`px-4 py-3 rounded-md text-sm ${
                     isActive(link.path)
                       ? "text-primary bg-primary/5"
                       : "text-muted-foreground hover:text-foreground hover:bg-muted"
@@ -225,21 +307,40 @@ const Header = () => {
                 <Link
                   to="/solutions"
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`text-sm font-semibold text-foreground mb-2 block ${
-                    isActive("/solutions")
-                      ? "text-primary"
-                      : ""
-                  }`}
+                  className="text-sm font-semibold mb-2 block"
                 >
                   Solutions
                 </Link>
-                <div className="flex flex-col gap-1 ml-4">
+                <div className="ml-4 flex flex-col gap-1">
                   {solutionsLinks.map((link) => (
                     <Link
                       key={link.path}
                       to={link.path}
                       onClick={() => setMobileMenuOpen(false)}
-                      className={`px-3 py-2 rounded-md text-sm font-body transition-colors ${
+                      className={`px-3 py-2 rounded-md text-sm ${
+                        isActive(link.path)
+                          ? "text-primary bg-primary/5"
+                          : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                      }`}
+                    >
+                      {link.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+              {/* ⭐ Mobile How can we help? */}
+              <div className="px-4 py-2">
+                <div className="text-sm font-semibold mb-2">
+                  How can we help?
+                </div>
+                <div className="ml-4 flex flex-col gap-1">
+                  {helpLinks.map((link) => (
+                    <Link
+                      key={link.path}
+                      to={link.path}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className={`px-3 py-2 rounded-md text-sm ${
                         isActive(link.path)
                           ? "text-primary bg-primary/5"
                           : "text-muted-foreground hover:text-foreground hover:bg-muted"
@@ -253,14 +354,14 @@ const Header = () => {
 
               {/* Mobile Resources */}
               <div className="px-4 py-2">
-                <div className="text-sm font-semibold text-foreground mb-2">Resources</div>
-                <div className="flex flex-col gap-1 ml-4">
+                <div className="text-sm font-semibold mb-2">Resources</div>
+                <div className="ml-4 flex flex-col gap-1">
                   {resourcesLinks.map((link) => (
                     <Link
                       key={link.path}
                       to={link.path}
                       onClick={() => setMobileMenuOpen(false)}
-                      className={`px-3 py-2 rounded-md text-sm font-body transition-colors ${
+                      className={`px-3 py-2 rounded-md text-sm ${
                         isActive(link.path)
                           ? "text-primary bg-primary/5"
                           : "text-muted-foreground hover:text-foreground hover:bg-muted"
@@ -272,6 +373,7 @@ const Header = () => {
                 </div>
               </div>
 
+              {/* Mobile Login & Demo */}
               <div className="flex flex-col gap-2 mt-4 pt-4 border-t border-border">
                 <Link to="/login" onClick={() => setMobileMenuOpen(false)}>
                   <Button variant="outline" className="w-full">
