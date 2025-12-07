@@ -24,7 +24,7 @@ const Footer = () => {
     ],
     resources: [
       { name: "Press Release", path: "/press-releases" },
-      { name: "Career Jobs", path: "/careers" },
+      { name: "Careers Jobs", path: "/careers" },
       { name: "Webinar", path: "/webinar" },
     ],
     company: [
