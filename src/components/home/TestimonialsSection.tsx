@@ -20,23 +20,23 @@ const testimonials = [
 
 const TestimonialsSection = () => {
   return (
-    <section className="py-24 bg-secondary">
+    <section className="py-12 md:py-16 bg-secondary">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <div className="text-center max-w-2xl mx-auto mb-10">
           <span className="inline-block text-primary font-body font-semibold text-sm uppercase tracking-wider mb-4">
             Testimonials
           </span>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
             Trusted by Libraries Nationwide
           </h2>
-          <p className="font-body text-lg text-muted-foreground">
+          <p className="font-body text-base md:text-lg text-muted-foreground">
             See what librarians across the country are saying about LibraryOne.
           </p>
         </div>
 
         {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {testimonials.map((testimonial, index) => (
             <div
               key={testimonial.author}

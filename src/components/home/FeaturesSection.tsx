@@ -1,53 +1,53 @@
-import { BookOpen, Headphones, BarChart3, Users, Shield, Zap } from "lucide-react";
+import { Target, Heart, Handshake, TrendingDown, Users, Sparkles } from "lucide-react";
 
 const features = [
   {
-    icon: BookOpen,
-    title: "eBooks Collection",
-    description: "Access millions of eBooks across all genres. From bestsellers to classics, build the perfect digital collection for your patrons.",
+    icon: Target,
+    title: "Our Mission",
+    description: "To empower libraries with innovative digital solutions that put control back in your hands. We're committed to helping libraries serve their communities better.",
   },
   {
-    icon: Headphones,
-    title: "Audiobooks Library",
-    description: "Offer thousands of audiobooks with seamless streaming. Perfect for commuters and multitasking readers.",
+    icon: Heart,
+    title: "Why We Exist",
+    description: "Libraries deserve partners, not vendors. We believe in building solutions that respect your budget, your brand, and your mission to serve your community.",
   },
   {
-    icon: BarChart3,
-    title: "Analytics Dashboard",
-    description: "Gain insights into collection usage, popular titles, and patron engagement with our comprehensive analytics tools.",
+    icon: Handshake,
+    title: "Partnership First",
+    description: "We work with libraries, not against them. Our solutions are designed to keep your library's identity front and center, not hidden behind vendor branding.",
+  },
+  {
+    icon: TrendingDown,
+    title: "Budget Relief",
+    description: "Stretch your digital budget further with better pricing, flexible terms, and solutions designed to maximize your investment in your community.",
   },
   {
     icon: Users,
-    title: "Patron Management",
-    description: "Streamline user management with easy registration, borrowing limits, and personalized recommendations.",
+    title: "Community Focus",
+    description: "Every decision we make is guided by one question: How does this help libraries better serve their patrons and communities?",
   },
   {
-    icon: Shield,
-    title: "Secure Platform",
-    description: "Enterprise-grade security protecting patron data and content with encryption and compliance standards.",
-  },
-  {
-    icon: Zap,
-    title: "Lightning Fast",
-    description: "Experience instant title delivery and lightning-fast search across your entire catalog.",
+    icon: Sparkles,
+    title: "Innovation",
+    description: "We're constantly innovating to solve real problems libraries face—from vendor lock-in to budget constraints to patron engagement.",
   },
 ];
 
 const FeaturesSection = () => {
   return (
-    <section className="py-24 bg-background">
+    <section className="py-12 md:py-16 bg-background">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <div className="text-center max-w-2xl mx-auto mb-10">
           <span className="inline-block text-primary font-body font-semibold text-sm uppercase tracking-wider mb-4">
-            Our Solutions
+            Our Values
           </span>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Everything Your Library Needs
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+            Why We Do What We Do
           </h2>
-          <p className="font-body text-lg text-muted-foreground">
-            LibraryOne offers comprehensive digital solutions designed to help you 
-            easily manage your collections and serve your patrons efficiently.
+          <p className="font-body text-base md:text-lg text-muted-foreground">
+            LibraryOne was founded on a simple belief: libraries deserve better. Better technology, 
+            better partnerships, and better solutions that put you—and your patrons—first.
           </p>
         </div>
 

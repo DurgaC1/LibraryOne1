@@ -5,7 +5,7 @@ import patternImage from "@/assets/pattern-books.jpg";
 
 const CTASection = () => {
   return (
-    <section className="py-24 relative overflow-hidden">
+    <section className="py-12 md:py-16 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 hero-gradient" />
       <div className="absolute inset-0 opacity-10">
@@ -19,16 +19,16 @@ const CTASection = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-3xl mx-auto text-center">
           {/* Content */}
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-card mb-6">
-            Ready to Transform Your Library?
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-card mb-4">
+            Ready to Reclaim Your Digital Future?
           </h2>
-          <p className="font-body text-lg md:text-xl text-card/80 mb-10 max-w-xl mx-auto">
-            Join thousands of libraries already using LibraryOne to deliver 
-            exceptional digital experiences to their patrons.
+          <p className="font-body text-base md:text-lg text-card/80 mb-8 max-w-xl mx-auto">
+            Let's work together to build a digital library solution that puts you back in control. 
+            Join libraries across the country who have chosen a better way forward.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
             <Link to="/demo">
               <Button variant="hero" size="xl" className="group">
                 Request a Demo

@@ -73,10 +73,10 @@ const PressReader = () => {
     },
   ];
 
-  return (
-    <div className="min-h-screen bg-background flex flex-col">
-      <Header />
-      <main className="flex-1 pt-20 overflow-visible">
+    return (
+      <div className="min-h-screen bg-background flex flex-col">
+        <Header />
+        <main className="flex-1 pt-20 overflow-visible">
         {/* Hero Section */}
         <section className="relative py-20">
           <div className="absolute inset-0 hero-gradient" />
@@ -85,14 +85,14 @@ const PressReader = () => {
           </div>
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-4xl mx-auto">
-              {/* Breadcrumbs */}
+            {/* Breadcrumbs */}
               <nav className="flex items-center gap-2 text-xs md:text-sm text-card/80 mb-6">
                 <Link to="/" className="hover:text-card transition-colors">
-                  Home
-                </Link>
-                <span>/</span>
+                Home
+              </Link>
+              <span>/</span>
                 <span className="text-card font-medium">PressReader</span>
-              </nav>
+            </nav>
 
               <div className="flex items-start justify-between mb-6">
                 <div>
@@ -133,7 +133,7 @@ const PressReader = () => {
                 </p>
                 <p className="text-lg text-muted-foreground font-body leading-relaxed">
                   Easy access on any mobile device or laptop through your WiFi network or every reader's own library card improves the way your patrons, students, and faculty discover stories that matter.
-                </p>
+        </p>
               </div>
 
               {/* Features Grid */}
@@ -223,7 +223,7 @@ const PressReader = () => {
                       />
                     </div>
                   </div>
-
+ 
                   <div className="space-y-2">
                     <Label htmlFor="email" className="text-foreground">
                       Email Address <span className="text-destructive">*</span>
@@ -270,10 +270,10 @@ const PressReader = () => {
             </div>
           </div>
         </section>
-      </main>
-      <Footer />
-    </div>
-  );
-};
+        </main>
+        <Footer />
+      </div>
+    );
+  };
 
-export default PressReader;
+  export default PressReader;
