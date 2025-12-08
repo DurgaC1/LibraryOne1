@@ -57,7 +57,7 @@ const Header = () => {
   const solutionsLinks = [
     { name: "Boundless", path: "/boundless" },
     { name: "TS 360", path: "/title-source-360" },
-    { name: "Digital Content", path: "/digital-content" },
+    { name: "Content Services", path: "/digital-content" },
     { name: "ePopup", path: "/e-popup" }, // make sure this route exists
   ];
 

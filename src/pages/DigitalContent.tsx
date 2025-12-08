@@ -14,10 +14,10 @@ const DigitalContent = () => {
                 Home
               </Link>
               <span>/</span>
-              <span className="text-foreground font-medium">Digital Content</span>
+              <span className="text-foreground font-medium">Content Services</span>
             </nav>
 
-            <h1 className="text-3xl font-bold mb-6 text-foreground">Digital Content</h1>
+            <h1 className="text-3xl font-bold mb-6 text-foreground">Content Services</h1>
  
         <p className="text-muted-foreground mb-6">
           <strong>LibraryOne</strong> offers a unified digital content platform for
