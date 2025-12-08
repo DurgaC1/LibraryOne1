@@ -26,9 +26,7 @@ import TermsAndConditions from "./pages/TermsAndConditions";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import PublicLibraries from "@/pages/help/PublicLibraries";
 import AcademicLibraries from "@/pages/help/AcademicLibraries";
-
-
-
+import EPopup from "./pages/ePopup";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -54,7 +52,7 @@ const App = () => (
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/press-releases" element={<PressReleases />} />
           <Route path="/digital-content" element={<DigitalContent />} />
- 
+
           <Route path="/rotating-reads" element={<RotatingReads />} />
           <Route path="/press-reader" element={<PressReader />} />
           <Route path="/founding-principles" element={<About />} />
@@ -62,6 +60,7 @@ const App = () => (
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/public-libraries" element={<PublicLibraries />} />
           <Route path="/academic-libraries" element={<AcademicLibraries />} />
+          <Route path="/e-popup" element={<EPopup />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -122,17 +122,9 @@ const Boundless = () => {
 
                     <div className="container mx-auto px-4 relative z-10">
                         <div className="max-w-3xl">
-                            <span className="inline-flex items-center gap-2 text-card/80 font-body font-semibold text-sm uppercase tracking-wider mb-4">
-                                <Sparkles className="w-4 h-4" />
-                                Say hello to Boundless
-                            </span>
                             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-card mb-6">
                                 Boundless: The Digital Library Platform Built for Libraries
                             </h1>
-                            <p className="font-body text-lg text-card/80 mb-4">
-                                Tired of losing your patrons to third-party platforms that hijack your library’s
-                                identity, limit your flexibility, and drive up costs?
-                            </p>
                             <p className="font-body text-lg text-card/80 max-w-xl">
                                 Boundless gives libraries a better way forward — with more control, deeper
                                 discounts, and a platform built for libraries, not against them. Give your patrons
@@ -147,11 +139,6 @@ const Boundless = () => {
                                         <ArrowRightCircle className="w-5 h-5 ml-2 group-hover:translate-x-0.5 transition-transform" />
                                     </Button>
                                 </a>
-                                <Link to="/contact">
-                                    <Button variant="heroOutline" size="lg">
-                                        Talk to Our Team
-                                    </Button>
-                                </Link>
                             </div>
                         </div>
                     </div>
@@ -431,17 +418,6 @@ const Boundless = () => {
                                                     />
                                                     <span>Boundless</span>
                                                 </label>
-                                                <label className="inline-flex items-center gap-2 cursor-pointer">
-                                                    <input
-                                                        type="radio"
-                                                        name="interest"
-                                                        value="kidsTeens"
-                                                        checked={interest === "kidsTeens"}
-                                                        onChange={() => setInterest("kidsTeens")}
-                                                        className="accent-primary"
-                                                    />
-                                                    <span>Boundless Kids and Teen Bundle</span>
-                                                </label>
                                             </div>
                                         </div>
 
@@ -474,38 +450,6 @@ const Boundless = () => {
                     </div>
                 </section>
 
-                {/* Kids & Teens CTA */}
-                <section className="py-20 hero-gradient">
-                    <div className="container mx-auto px-4 max-w-4xl text-center">
-                        <div className="bg-card/10 backdrop-blur rounded-3xl p-10 border border-card/30 card-elevated">
-                            <h2 className="font-display text-3xl md:text-4xl font-bold text-card mb-4">
-                                Built for Every Reader — Especially Kids & Teens
-                            </h2>
-                            <p className="font-body text-card/85 mb-6">
-                                Interested in a custom digital experience built just for Kids & Teens? Boundless
-                                helps you design age-appropriate spaces that keep younger readers safe,
-                                inspired, and engaged.
-                            </p>
-                            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-4">
-                                <Link to="/contact">
-                                    <Button variant="hero" size="lg">
-                                        Talk About Kids & Teens
-                                        <ArrowRight className="w-4 h-4 ml-2" />
-                                    </Button>
-                                </Link>
-                                <a href="#boundless-demo">
-                                    <Button variant="heroOutline" size="lg">
-                                        Schedule Your Free Demo
-                                    </Button>
-                                </a>
-                            </div>
-                            <p className="font-body text-xs text-card/70">
-                                Ready to move to Boundless? Our team will guide you through migration,
-                                configuration, and launch — step by step.
-                            </p>
-                        </div>
-                    </div>
-                </section>
             </main>
 
             <Footer />

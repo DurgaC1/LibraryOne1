@@ -62,9 +62,6 @@ const Footer = () => {
                 <span className="font-display text-xl font-bold text-card leading-tight">
                   LibraryOne
                 </span>
-                <span className="text-xs text-card/60 font-body -mt-0.5">
-                  Digital Inc
-                </span>
               </div>
             </Link>
             <p className="text-card/70 font-body mb-6 max-w-md">
@@ -149,7 +146,7 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h4 className="font-display font-semibold text-lg mb-4">Contact</h4>
+            <h4 className="font-display font-semibold text-lg mb-4">LibraryOne Digital Inc</h4>
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
                 <Phone className="w-4 h-4 mt-0.5 text-primary" />

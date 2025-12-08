@@ -7,8 +7,6 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [solutionsOpen, setSolutionsOpen] = useState(false);
   const [resourcesOpen, setResourcesOpen] = useState(false);
-
-  // NEW: help dropdown state
   const [helpOpen, setHelpOpen] = useState(false);
 
   const location = useLocation();
@@ -49,18 +47,18 @@ const Header = () => {
     setHelpOpen(false);
   }, [location.pathname]);
 
+  // ✅ Removed Contact from header
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
-    { name: "Contact", path: "/contact" },
   ];
 
+  // ✅ Products under this dropdown now
   const solutionsLinks = [
     { name: "Boundless", path: "/boundless" },
-    { name: "Digital Content", path: "/digital-content" },
     { name: "TS 360", path: "/title-source-360" },
-    { name: "PressReader", path: "/press-reader" },
-    { name: "Rotating Reads", path: "/rotating-reads" },
+    { name: "Digital Content", path: "/digital-content" },
+    { name: "ePopup", path: "/e-popup" }, // make sure this route exists
   ];
 
   const resourcesLinks = [
@@ -69,7 +67,6 @@ const Header = () => {
     { name: "Webinar", path: "/webinar" },
   ];
 
-  // NEW: links for How can we help?
   const helpLinks = [
     { name: "Public Libraries", path: "/public-libraries" },
     { name: "Academic Libraries", path: "/academic-libraries" },
@@ -89,7 +86,6 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 glass-effect border-b border-border">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
-
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
             <div className="w-10 h-10 hero-gradient rounded-lg flex items-center justify-center shadow-sm group-hover:shadow-md transition-shadow">
@@ -98,9 +94,6 @@ const Header = () => {
             <div className="flex flex-col">
               <span className="font-display text-xl font-bold text-foreground leading-tight">
                 LibraryOne
-              </span>
-              <span className="text-xs text-muted-foreground font-body -mt-0.5">
-                Digital Inc
               </span>
             </div>
           </Link>
@@ -121,7 +114,7 @@ const Header = () => {
               </Link>
             ))}
 
-            {/* Solutions Dropdown */}
+            {/* ✅ Products Dropdown (earlier Solutions) */}
             <div
               className="relative"
               ref={solutionsRef}
@@ -136,7 +129,7 @@ const Header = () => {
                     : "text-muted-foreground hover:text-foreground hover:bg-muted"
                 }`}
               >
-                Solutions
+                Products
                 <ChevronDown
                   className={`w-4 h-4 transition-transform ${
                     solutionsOpen ? "rotate-180" : ""
@@ -164,7 +157,7 @@ const Header = () => {
               )}
             </div>
 
-            {/* ⭐ NEW: How can we help? Dropdown */}
+            {/* How can we help? Dropdown */}
             <div
               className="relative"
               ref={helpRef}
@@ -302,14 +295,14 @@ const Header = () => {
                 </Link>
               ))}
 
-              {/* Mobile Solutions */}
+              {/* ✅ Mobile Products (earlier Solutions) */}
               <div className="px-4 py-2">
                 <Link
                   to="/solutions"
                   onClick={() => setMobileMenuOpen(false)}
                   className="text-sm font-semibold mb-2 block"
                 >
-                  Solutions
+                  Products
                 </Link>
                 <div className="ml-4 flex flex-col gap-1">
                   {solutionsLinks.map((link) => (
@@ -329,7 +322,7 @@ const Header = () => {
                 </div>
               </div>
 
-              {/* ⭐ Mobile How can we help? */}
+              {/* Mobile How can we help? */}
               <div className="px-4 py-2">
                 <div className="text-sm font-semibold mb-2">
                   How can we help?
