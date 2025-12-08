@@ -34,7 +34,7 @@ const TS360 = () => {
             <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
               <div className="max-w-3xl">
                 <span className="inline-block text-card/80 font-body font-semibold text-sm uppercase tracking-wider mb-4">
-                  Title Source 360
+                  TS 360
                 </span>
                 <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-card mb-6">
                   Title Source 360
@@ -45,27 +45,6 @@ const TS360 = () => {
                   for your institution. The platform is designed to help you easily find the titles
                   you need and manage your orders more efficiently.
                 </p>
-              </div>
-
-              {/* Share / Quick Action */}
-              <div className="flex flex-col items-start md:items-end gap-4">
-                <Button
-                  variant="heroOutline"
-                  size="sm"
-                  className="flex items-center gap-2"
-                >
-                  <Share2 className="w-4 h-4" />
-                  Share
-                </Button>
-                <div className="bg-card/80 backdrop-blur rounded-xl p-4 shadow-lg max-w-xs">
-                  <p className="font-body text-sm text-muted-foreground mb-2">
-                    Already using Title Source 360?
-                  </p>
-                  <Button variant="hero" size="sm" className="w-full justify-between">
-                    Go to Title Source 360
-                    <ArrowRight className="w-4 h-4" />
-                  </Button>
-                </div>
               </div>
             </div>
           </div>
