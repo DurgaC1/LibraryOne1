@@ -9,7 +9,7 @@ export default function AcademicLibraries() {
 
       {/* HERO SECTION */}
       <section
-        className="relative h-[40vh] w-full bg-cover bg-center flex items-center"
+        className="relative pt-20 h-[40vh] w-full bg-cover bg-center flex items-center"
         style={{
           backgroundImage:
             "url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1600&q=80')",

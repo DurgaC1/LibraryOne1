@@ -9,7 +9,7 @@ export default function PublicLibraries() {
 
       {/* HERO SECTION */}
       <section
-        className="relative h-[40vh] w-full bg-cover bg-center flex items-center"
+        className="relative pt-20 h-[40vh] w-full bg-cover bg-center flex items-center"
         style={{
           backgroundImage:
             "url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1600&q=80')",
