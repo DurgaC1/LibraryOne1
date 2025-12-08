@@ -1,5 +1,4 @@
 import { Link, useLocation } from "react-router-dom";
-import { Button } from "@/components/ui/button";
 import { Menu, X, BookOpen, ChevronDown } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 
@@ -14,7 +13,6 @@ const Header = () => {
   const resourcesRef = useRef<HTMLDivElement>(null);
   const helpRef = useRef<HTMLDivElement>(null);
 
-  // Close dropdowns when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -40,25 +38,22 @@ const Header = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // Close all dropdowns on route change
   useEffect(() => {
     setSolutionsOpen(false);
     setResourcesOpen(false);
     setHelpOpen(false);
   }, [location.pathname]);
 
-  // ✅ Removed Contact from header
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
   ];
 
-  // ✅ Products under this dropdown now
   const solutionsLinks = [
     { name: "Boundless", path: "/boundless" },
     { name: "TS 360", path: "/title-source-360" },
     { name: "Content Services", path: "/digital-content" },
-    { name: "ePopup", path: "/e-popup" }, // make sure this route exists
+    { name: "ePopup", path: "/e-popup" },
   ];
 
   const resourcesLinks = [
@@ -78,15 +73,12 @@ const Header = () => {
     location.pathname === "/solutions" ||
     solutionsLinks.some((link) => isActive(link.path));
 
-  const isResourcesActive = resourcesLinks.some((link) =>
-    isActive(link.path)
-  );
+  const isResourcesActive = resourcesLinks.some((link) => isActive(link.path));
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 glass-effect border-b border-border">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
             <div className="w-10 h-10 hero-gradient rounded-lg flex items-center justify-center shadow-sm group-hover:shadow-md transition-shadow">
               <BookOpen className="w-5 h-5 text-card" />
@@ -98,7 +90,6 @@ const Header = () => {
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-1">
             {navLinks.map((link) => (
               <Link
@@ -114,7 +105,6 @@ const Header = () => {
               </Link>
             ))}
 
-            {/* ✅ Products Dropdown (earlier Solutions) */}
             <div
               className="relative"
               ref={solutionsRef}
@@ -157,7 +147,7 @@ const Header = () => {
               )}
             </div>
 
-            {/* How can we help? Dropdown */}
+            {/* Help dropdown */}
             <div
               className="relative"
               ref={helpRef}
@@ -182,9 +172,7 @@ const Header = () => {
 
               {helpOpen && (
                 <div className="absolute top-full left-0 mt-1 w-56 bg-card border border-border rounded-lg shadow-lg py-2 z-50">
-                  <p className="px-4 py-2 text-sm font-semibold">
-                    We help...
-                  </p>
+                  <p className="px-4 py-2 text-sm font-semibold">We help...</p>
 
                   {helpLinks.map((link) => (
                     <Link
@@ -204,7 +192,7 @@ const Header = () => {
               )}
             </div>
 
-            {/* Resources Dropdown */}
+            {/* Resources */}
             <div className="relative" ref={resourcesRef}>
               <button
                 type="button"
@@ -249,30 +237,12 @@ const Header = () => {
             </div>
           </nav>
 
-          {/* Desktop Actions */}
-          <div className="hidden md:flex items-center gap-3">
-            <Link to="/login">
-              <Button variant="ghost" size="sm">
-                Login
-              </Button>
-            </Link>
-            <Link to="/demo">
-              <Button variant="default" size="sm">
-                Request Demo
-              </Button>
-            </Link>
-          </div>
-
-          {/* Mobile Menu Button */}
+          {/* Mobile menu button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="md:hidden p-2 rounded-md hover:bg-muted transition-colors"
           >
-            {mobileMenuOpen ? (
-              <X className="w-6 h-6" />
-            ) : (
-              <Menu className="w-6 h-6" />
-            )}
+            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
 
@@ -295,7 +265,7 @@ const Header = () => {
                 </Link>
               ))}
 
-              {/* ✅ Mobile Products (earlier Solutions) */}
+              {/* Mobile Products */}
               <div className="px-4 py-2">
                 <Link
                   to="/solutions"
@@ -322,11 +292,9 @@ const Header = () => {
                 </div>
               </div>
 
-              {/* Mobile How can we help? */}
+              {/* Mobile How can we help */}
               <div className="px-4 py-2">
-                <div className="text-sm font-semibold mb-2">
-                  How can we help?
-                </div>
+                <div className="text-sm font-semibold mb-2">How can we help?</div>
                 <div className="ml-4 flex flex-col gap-1">
                   {helpLinks.map((link) => (
                     <Link
@@ -364,20 +332,6 @@ const Header = () => {
                     </Link>
                   ))}
                 </div>
-              </div>
-
-              {/* Mobile Login & Demo */}
-              <div className="flex flex-col gap-2 mt-4 pt-4 border-t border-border">
-                <Link to="/login" onClick={() => setMobileMenuOpen(false)}>
-                  <Button variant="outline" className="w-full">
-                    Login
-                  </Button>
-                </Link>
-                <Link to="/demo" onClick={() => setMobileMenuOpen(false)}>
-                  <Button variant="default" className="w-full">
-                    Request Demo
-                  </Button>
-                </Link>
               </div>
             </nav>
           </div>

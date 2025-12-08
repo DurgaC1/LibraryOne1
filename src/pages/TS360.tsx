@@ -70,7 +70,7 @@ const TS360 = () => {
 
               <div className="bg-background rounded-xl p-6 card-elevated border border-border">
                 <h3 className="font-display text-lg font-semibold mb-2">
-                  New to LibraryOne?
+                  New to TS360?
                 </h3>
                 <p className="font-body text-sm text-muted-foreground mb-4">
                   Are you a new customer to LibraryOne? Learn how Title Source 360 can support your
