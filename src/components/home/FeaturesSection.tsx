@@ -1,4 +1,4 @@
-import { Target, Heart, Handshake, TrendingDown, Users, Sparkles } from "lucide-react";
+import { Target, Heart, Handshake, Users, Sparkles, Eye } from "lucide-react";
 
 const features = [
   {
@@ -17,11 +17,6 @@ const features = [
     description: "We work with libraries, not against them. Our solutions are designed to keep your library's identity front and center, not hidden behind vendor branding.",
   },
   {
-    icon: TrendingDown,
-    title: "Budget Relief",
-    description: "Stretch your digital budget further with better pricing, flexible terms, and solutions designed to maximize your investment in your community.",
-  },
-  {
     icon: Users,
     title: "Community Focus",
     description: "Every decision we make is guided by one question: How does this help libraries better serve their patrons and communities?",
@@ -30,6 +25,11 @@ const features = [
     icon: Sparkles,
     title: "Innovation",
     description: "We're constantly innovating to solve real problems libraries face—from vendor lock-in to budget constraints to patron engagement.",
+  },
+  {
+    icon: Eye,
+    title: "Transparency",
+    description: "We believe in open communication, clear pricing, and honest partnerships. No hidden fees, no surprises—just straightforward solutions you can trust.",
   },
 ];
 

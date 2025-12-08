@@ -27,6 +27,8 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import PublicLibraries from "@/pages/help/PublicLibraries";
 import AcademicLibraries from "@/pages/help/AcademicLibraries";
 import EPopup from "./pages/ePopup";
+import CaseStudies from "./pages/CaseStudies";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -61,6 +63,7 @@ const App = () => (
           <Route path="/public-libraries" element={<PublicLibraries />} />
           <Route path="/academic-libraries" element={<AcademicLibraries />} />
           <Route path="/e-popup" element={<EPopup />} />
+          <Route path="/case-studies" element={<CaseStudies />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -57,9 +57,10 @@ const Header = () => {
   ];
 
   const resourcesLinks = [
+    { name: "Case Studies", path: "/case-studies" },
     { name: "Press Release", path: "/press-releases" },
-    { name: "Careers Jobs", path: "/careers" },
-    { name: "Webinar", path: "/webinar" },
+    // { name: "Careers Jobs", path: "/careers" },
+    // { name: "Webinar", path: "/webinar" },
   ];
 
   const helpLinks = [
