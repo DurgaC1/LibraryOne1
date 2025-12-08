@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { BookOpen, ShoppingCart, RotateCcw, Globe, ArrowRight } from "lucide-react";
-import patternImage from "@/assets/pattern-books.jpg";
+import patternImage from "@/assets/sol.png";
 
 const solutions = [
   {
@@ -19,16 +19,16 @@ const solutions = [
     link: "/title-source-360",
   },
   {
-    icon: RotateCcw,
-    title: "Rotating Reads",
-    description: "Get titles when they're hot, return them when they're not. Receive a shelf-ready rotating collection of books for your library with our Book Leasing Program.",
-    link: "/rotating-reads",
+    icon: Globe,
+    title: "ePopup",
+    description: "ePopUp brings your digital library into real-world spaces.Whether it’s a bus stop, airport lounge, or hotel lobby, people can simply scan a QR code and start reading instantly. It’s a smart way to reach new users and connect your collection with the community where they already are.",
+    link: "/e-popup",
   },
   {
-    icon: Globe,
-    title: "PressReader",
-    description: "Give your patrons access to the whole world. 7,000+ premium publications, representing 120 countries and 60 languages, invite you to become part of a global community.",
-    link: "/press-reader",
+    icon: RotateCcw,
+    title: "Content Services",
+    description: "Content Services gives libraries a unified way to offer eBooks, audiobooks, magazines, and global news. Readers enjoy seamless access on any device, supported by personalized discovery and curated collections. It’s a complete digital experience that enhances discovery, engagement, and accessibility for everyone.",
+    link: "/digital-content",
   },
 ];
 
@@ -41,7 +41,7 @@ const Solutions = () => {
         {/* Hero Section */}
         <section className="relative pt-32 pb-20">
           <div className="absolute inset-0 hero-gradient" />
-          <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0 opacity-30">
             <img src={patternImage} alt="" className="w-full h-full object-cover" />
           </div>
 

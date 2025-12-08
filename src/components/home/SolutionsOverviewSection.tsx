@@ -16,16 +16,16 @@ const solutions = [
     path: "/title-source-360",
   },
   {
-    icon: RotateCcw,
-    title: "Rotating Reads",
-    description: "Get titles when they're hot, return them when they're not with our Book Leasing Program.",
-    path: "/rotating-reads",
+    icon: Globe,
+    title: "ePopup",
+    description: "Take your library’s digital collection into everyday spaces with instant QR access.",
+    path: "/e-popup",
   },
   {
-    icon: Globe,
-    title: "PressReader",
-    description: "Access 7,000+ premium publications from 120 countries and 60 languages.",
-    path: "/press-reader",
+    icon: RotateCcw,
+    title: "Content Services",
+    description: "Access, manage, and explore your entire digital collection from one seamless platform.",
+    path: "/digital-content",
   },
 ];
 

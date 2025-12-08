@@ -161,7 +161,7 @@ const About = () => {
                   About LibraryOne
                 </span>
                 <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-card mb-4 leading-tight">
-                  Empowering Libraries for Over 40 Years
+                  Empowering Libraries
                 </h1>
                 <p className="font-body text-base md:text-lg text-card/85 mb-4 max-w-xl">
                   LibraryOne is the leading supplier of library content, software and services
@@ -181,21 +181,17 @@ const About = () => {
                       <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-0.5 transition-transform" />
                     </Button>
                   </Link>
-                  <Link to="/contact">
-                    <Button variant="heroOutline" size="lg">
-                      Contact Us
-                    </Button>
-                  </Link>
+
                   <Button
                     type="button"
                     variant="heroOutline"
-                    size="sm"
-                    className="mt-1"
+                    size="lg"
                     onClick={() => setShowStoryModal(true)}
                   >
                     Our Story in a Minute
                   </Button>
                 </div>
+
               </div>
 
               {/* Right side: badges / mini highlight card */}
@@ -258,11 +254,10 @@ const About = () => {
                 <button
                   type="button"
                   onClick={() => setActiveTab("overview")}
-                  className={`px-3 md:px-4 py-1 rounded-full flex items-center gap-1 transition-all ${
-                    activeTab === "overview"
+                  className={`px-3 md:px-4 py-1 rounded-full flex items-center gap-1 transition-all ${activeTab === "overview"
                       ? "bg-primary text-primary-foreground shadow-sm"
                       : "text-muted-foreground hover:text-foreground"
-                  }`}
+                    }`}
                 >
                   <Info className="w-3 h-3" />
                   Overview
@@ -270,11 +265,10 @@ const About = () => {
                 <button
                   type="button"
                   onClick={() => setActiveTab("history")}
-                  className={`px-3 md:px-4 py-1 rounded-full flex items-center gap-1 transition-all ${
-                    activeTab === "history"
+                  className={`px-3 md:px-4 py-1 rounded-full flex items-center gap-1 transition-all ${activeTab === "history"
                       ? "bg-primary text-primary-foreground shadow-sm"
                       : "text-muted-foreground hover:text-foreground"
-                  }`}
+                    }`}
                 >
                   <BookOpen className="w-3 h-3" />
                   History
@@ -282,11 +276,10 @@ const About = () => {
                 <button
                   type="button"
                   onClick={() => setActiveTab("impact")}
-                  className={`px-3 md:px-4 py-1 rounded-full flex items-center gap-1 transition-all ${
-                    activeTab === "impact"
+                  className={`px-3 md:px-4 py-1 rounded-full flex items-center gap-1 transition-all ${activeTab === "impact"
                       ? "bg-primary text-primary-foreground shadow-sm"
                       : "text-muted-foreground hover:text-foreground"
-                  }`}
+                    }`}
                 >
                   <Heart className="w-3 h-3" />
                   Impact
@@ -634,7 +627,7 @@ const About = () => {
               <h3 className="font-display text-xl md:text-2xl font-semibold text-foreground mb-6">
                 Our Core Principles
               </h3>
-              
+
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
                   <div className="w-2 h-2 rounded-full bg-primary mt-2 shrink-0" />

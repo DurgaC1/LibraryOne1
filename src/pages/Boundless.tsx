@@ -145,7 +145,7 @@ const Boundless = () => {
                 </section>
 
                 {/* Highlight Cards */}
-                <section className="py-16 bg-card border-y border-border">
+                {/* <section className="py-16 bg-card border-y border-border">
                     <div className="container mx-auto px-4">
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                             <div className="bg-background rounded-2xl p-6 card-elevated border border-border/60 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:border-primary/60">
@@ -188,7 +188,7 @@ const Boundless = () => {
                             </div>
                         </div>
                     </div>
-                </section>
+                </section> */}
 
                 {/* Reclaim / Budget / Patrons */}
                 <section className="py-20 bg-background">

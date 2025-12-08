@@ -52,8 +52,8 @@ const Header = () => {
   const solutionsLinks = [
     { name: "Boundless", path: "/boundless" },
     { name: "TS 360", path: "/title-source-360" },
-    { name: "Content Services", path: "/digital-content" },
     { name: "ePopup", path: "/e-popup" },
+    { name: "Content Services", path: "/digital-content" },
   ];
 
   const resourcesLinks = [
