@@ -17,7 +17,8 @@ import {
     ArrowRight,
     ArrowRightCircle,
 } from "lucide-react";
-import heroImage from "@/assets/hero-library.jpg";
+import heroImage from "@/assets/bou.png";
+import videoSrc from "@/assets/video/vid.mp4";
 
 const identityPoints = [
     "Eliminate vendor lock-in",
@@ -120,7 +121,7 @@ const Boundless = () => {
                         <div className="absolute inset-0 overlay-gradient" />
                     </div>
 
-                    <div className="container mx-auto px-4 relative z-10">
+                    <div className="container mx-auto px-4 relative z-90">
                         <div className="max-w-3xl">
                             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-card mb-6">
                                 Boundless: The Digital Library Platform Built for Libraries
@@ -140,6 +141,37 @@ const Boundless = () => {
                                     </Button>
                                 </a>
                             </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Video Section */}
+                <section className="py-20 bg-background">
+                    <div className="container mx-auto px-4 max-w-6xl">
+                        <div className="text-center max-w-2xl mx-auto mb-12">
+                            <span className="inline-block text-primary font-body font-semibold text-sm uppercase tracking-wider mb-3">
+                                See Boundless in Action
+                            </span>
+                            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+                                Experience the Platform
+                            </h2>
+                            <p className="font-body text-muted-foreground">
+                                Watch how Boundless transforms your digital library experience with seamless access, 
+                                powerful features, and a platform designed for libraries.
+                            </p>
+                        </div>
+                        <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-border/60 bg-card">
+                            <video
+                                className="w-full h-auto"
+                                controls
+                                autoPlay
+                                muted
+                                loop
+                                playsInline
+                            >
+                                <source src={videoSrc} type="video/mp4" />
+                                Your browser does not support the video tag.
+                            </video>
                         </div>
                     </div>
                 </section>
