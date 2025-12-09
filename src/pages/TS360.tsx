@@ -53,7 +53,7 @@ const TS360 = () => {
         {/* Quick Links */}
         <section className="py-12 bg-card border-y border-border">
           <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="bg-background rounded-xl p-6 card-elevated border border-border">
                 <h3 className="font-display text-lg font-semibold mb-2">
                   Existing Title Source 360 Users
@@ -78,20 +78,6 @@ const TS360 = () => {
                 </p>
                 <Button variant="outline" size="sm" className="group">
                   Click here to get started
-                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-0.5 transition-transform" />
-                </Button>
-              </div>
-
-              <div className="bg-background rounded-xl p-6 card-elevated border border-border">
-                <h3 className="font-display text-lg font-semibold mb-2">
-                  Online Customer Support
-                </h3>
-                <p className="font-body text-sm text-muted-foreground mb-4">
-                  Need to register a new user for Online Customer Support? Create access for your
-                  team in just a few steps.
-                </p>
-                <Button variant="outline" size="sm" className="group">
-                  Click here to sign up
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-0.5 transition-transform" />
                 </Button>
               </div>
