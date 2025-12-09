@@ -42,7 +42,7 @@ const HeroSection = () => {
           <div className="space-y-2 mb-6">
             <p className="animate-fade-up-delay-2 font-body text-sm md:text-base text-card/90 max-w-xl leading-relaxed drop-shadow-md">
               LibraryOne exists to empower libraries with innovative digital solutions that put you back in control.
-              We believe libraries deserve better—better technology, better pricing, and better partnerships.
+              We believe in the power of libraries to transform communities. 
             </p>
             <p className="animate-fade-up-delay-2 font-body text-sm md:text-base text-card/85 max-w-xl leading-relaxed drop-shadow-md">
               Our mission is to help libraries reclaim their digital identity, stretch their budgets further,

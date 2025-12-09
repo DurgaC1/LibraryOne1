@@ -52,32 +52,6 @@ const values = [
   },
 ];
 
-const timeline = [
-  {
-    year: "1828",
-    title: "Our Beginnings",
-    description:
-      "LibraryOne began by binding and publishing books, supporting early library collections.",
-  },
-  {
-    year: "19th Century",
-    title: "Growing with Libraries",
-    description:
-      "We expanded into distributing books, originally by horse-drawn carriage, reaching more communities.",
-  },
-  {
-    year: "Digital Era",
-    title: "Technology & Innovation",
-    description:
-      "We embraced technology and digitization to create progressive services for modern libraries.",
-  },
-  {
-    year: "Today",
-    title: "Global Library Partner",
-    description:
-      "Based in Charlotte, N.C., we partner with more than 5,000 libraries worldwide to advance literacy.",
-  },
-];
 
 const mascotSlides = [
   {
@@ -99,7 +73,7 @@ const mascotSlides = [
 
 const About = () => {
   const { toast } = useToast();
-  const [activeTab, setActiveTab] = useState<"overview" | "history" | "impact">("overview");
+  const [activeTab, setActiveTab] = useState<"overview" | "impact">("overview");
   const [showStoryModal, setShowStoryModal] = useState(false);
   const [mascotIndex, setMascotIndex] = useState(0);
   const [mascotsLoading, setMascotsLoading] = useState(true);
@@ -169,9 +143,9 @@ const About = () => {
                   to advance literacy and learning.
                 </p>
                 <p className="font-body text-sm md:text-base text-card/70 max-w-xl">
-                  From our 19th-century roots in book binding to today&apos;s digital-first
-                  solutions, we&apos;ve grown alongside libraries while staying true to our
-                  mission: helping them inspire and serve their communities.
+                  Through real-time website solutions and innovative digital platforms, we connect
+                  libraries with their communities, fostering human connections and empowering
+                  institutions to make a meaningful impact on the lives they serve.
                 </p>
 
                 <div className="mt-6 flex flex-wrap items-center gap-3">
@@ -203,18 +177,18 @@ const About = () => {
                 <div className="grid grid-cols-2 gap-4 mb-4">
                   <div className="rounded-xl bg-secondary/70 p-3 flex flex-col justify-between">
                     <span className="text-xs font-body text-muted-foreground mb-1">
-                      Libraries partnered
+                      Year
                     </span>
                     <span className="font-display text-2xl font-bold text-primary">
-                      5,000+
+                      2025
                     </span>
                   </div>
                   <div className="rounded-xl bg-secondary/70 p-3 flex flex-col justify-between">
                     <span className="text-xs font-body text-muted-foreground mb-1">
-                      Founded
+                      Real-time connections
                     </span>
                     <span className="font-display text-2xl font-bold text-primary">
-                      1828
+                      24/7
                     </span>
                   </div>
                 </div>
@@ -264,17 +238,6 @@ const About = () => {
                 </button>
                 <button
                   type="button"
-                  onClick={() => setActiveTab("history")}
-                  className={`px-3 md:px-4 py-1 rounded-full flex items-center gap-1 transition-all ${activeTab === "history"
-                      ? "bg-primary text-primary-foreground shadow-sm"
-                      : "text-muted-foreground hover:text-foreground"
-                    }`}
-                >
-                  <BookOpen className="w-3 h-3" />
-                  History
-                </button>
-                <button
-                  type="button"
                   onClick={() => setActiveTab("impact")}
                   className={`px-3 md:px-4 py-1 rounded-full flex items-center gap-1 transition-all ${activeTab === "impact"
                       ? "bg-primary text-primary-foreground shadow-sm"
@@ -297,25 +260,17 @@ const About = () => {
                     mid-sized publishers through our Publisher Services business.
                   </p>
                   <p>
+                    Our real-time website solutions enable libraries to connect instantly with
+                    their communities, providing seamless access to digital resources, live
+                    availability updates, and immediate patron engagement. Through cutting-edge
+                    technology, we help libraries create meaningful human connections that
+                    transcend physical boundaries.
+                  </p>
+                  <p>
                     Our mission is to help our library partners inspire and serve their
                     communities through literacy and learning. By providing libraries with
-                    access to a multitude of formats and titles, we help our partners meet
-                    their patrons where they are in their lives.
-                  </p>
-                </div>
-              )}
-
-              {activeTab === "history" && (
-                <div className="space-y-4 font-body text-muted-foreground text-sm md:text-base">
-                  <p>
-                    Founded in 1828, LibraryOne began by binding and publishing books and
-                    later expanded into distributing books, originally by horse-drawn
-                    carriage. As libraries evolved, so did we.
-                  </p>
-                  <p>
-                    Over time, we&apos;ve grown our focus and efforts to harness the power
-                    of technology and digitization, developing progressive and innovative
-                    services that promote the progress and success of your library.
+                    access to a multitude of formats and titles through real-time platforms,
+                    we help our partners meet their patrons where they are in their lives.
                   </p>
                 </div>
               )}
@@ -324,14 +279,22 @@ const About = () => {
                 <div className="space-y-4 font-body text-muted-foreground text-sm md:text-base">
                   <p>
                     Based in Charlotte, N.C., LibraryOne is an independent, privately held
-                    company. We feel privileged to partner with more than 5,000 libraries
+                    company. We feel privileged to partner with libraries worldwide
                     and to support our library and publishing partners as they advance
-                    literacy in communities worldwide.
+                    literacy in communities around the globe.
                   </p>
                   <p>
-                    By connecting readers with stories, research and resources, we help
-                    libraries strengthen the communities they serve, from small towns to
-                    global cities.
+                    Our real-time website solutions create lasting impact by enabling instant
+                    connections between libraries and their communities. Every search, every
+                    reservation, every digital checkout happens in real-time, creating moments
+                    of discovery that strengthen human connections and transform lives.
+                  </p>
+                  <p>
+                    By connecting readers with stories, research and resources through
+                    innovative digital platforms, we help libraries strengthen the communities
+                    they serve—from small towns to global cities. Our technology doesn&apos;t
+                    just deliver content; it builds bridges between people, ideas, and
+                    opportunities.
                   </p>
                 </div>
               )}
@@ -339,39 +302,52 @@ const About = () => {
           </div>
         </section>
 
-        {/* Timeline + Stepper */}
+        {/* Real-Time Impact + Stepper */}
         <section className="py-16 bg-secondary">
           <div className="container mx-auto px-4 max-w-5xl">
             <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1.4fr)] gap-10">
-              {/* Timeline */}
+              {/* Real-Time Impact */}
               <div>
                 <h3 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">
-                  A timeline of LibraryOne
+                  Real-Time Impact Through Human Connection
                 </h3>
                 <p className="font-body text-sm md:text-base text-muted-foreground mb-6">
-                  From our origins in book binding to today&apos;s global digital solutions,
-                  our journey has always been rooted in supporting libraries.
+                  Our real-time website solutions create immediate, meaningful connections
+                  between libraries and their communities, transforming how people discover,
+                  access, and engage with knowledge.
                 </p>
-                <ol className="relative border-l border-border/70 pl-5 space-y-6">
-                  {timeline.map((item) => (
-                    <li key={item.year} className="relative">
-                      <div className="absolute -left-[11px] top-1 w-5 h-5 rounded-full bg-background border-2 border-primary flex items-center justify-center">
-                        <span className="w-2 h-2 rounded-full bg-primary" />
-                      </div>
-                      <div className="bg-card rounded-xl border border-border p-4 card-elevated transition-transform duration-300 hover:-translate-y-1">
-                        <p className="font-display text-xs uppercase tracking-wide text-primary mb-1">
-                          {item.year}
-                        </p>
-                        <p className="font-display text-base font-semibold text-foreground mb-1">
-                          {item.title}
-                        </p>
-                        <p className="font-body text-xs md:text-sm text-muted-foreground">
-                          {item.description}
-                        </p>
-                      </div>
-                    </li>
-                  ))}
-                </ol>
+                <div className="space-y-4">
+                  <div className="bg-card rounded-xl border border-border p-4 card-elevated transition-transform duration-300 hover:-translate-y-1">
+                    <p className="font-display text-base font-semibold text-foreground mb-2">
+                      Instant Access, Lasting Connections
+                    </p>
+                    <p className="font-body text-xs md:text-sm text-muted-foreground">
+                      Real-time availability updates, instant reservations, and immediate
+                      digital access create seamless experiences that strengthen the bond
+                      between libraries and their patrons.
+                    </p>
+                  </div>
+                  <div className="bg-card rounded-xl border border-border p-4 card-elevated transition-transform duration-300 hover:-translate-y-1">
+                    <p className="font-display text-base font-semibold text-foreground mb-2">
+                      Community Impact Through Technology
+                    </p>
+                    <p className="font-body text-xs md:text-sm text-muted-foreground">
+                      Every real-time interaction on our platform represents a moment of
+                      connection—a student finding research materials, a family discovering
+                      their next read, a community accessing vital resources.
+                    </p>
+                  </div>
+                  <div className="bg-card rounded-xl border border-border p-4 card-elevated transition-transform duration-300 hover:-translate-y-1">
+                    <p className="font-display text-base font-semibold text-foreground mb-2">
+                      Empowering Libraries, Enriching Lives
+                    </p>
+                    <p className="font-body text-xs md:text-sm text-muted-foreground">
+                      Our technology amplifies the human impact of libraries, enabling them
+                      to reach more people, serve more needs, and create more meaningful
+                      connections in their communities.
+                    </p>
+                  </div>
+                </div>
               </div>
 
               {/* Stepper / progress - Centered and compact */}
@@ -448,21 +424,19 @@ const About = () => {
                   A special chapter in our story
                 </h3>
                 <p className="font-body text-sm md:text-base text-muted-foreground mb-4">
-                  Libraries and cats have long been connected, from the Royal Library of
-                  Alexandria to 19th-century library cats who protected books from rodents.
-                  We have our own cat history: our beloved mascots, LibraryOne.
+                  Libraries and cats have long been connected, symbolizing the warmth and
+                  community spirit that libraries bring to their patrons. We have our own
+                  cat connection: our beloved mascots, LibraryOne.
                 </p>
                 <p className="font-body text-sm md:text-base text-muted-foreground mb-4">
-                  Both have since passed away, but for many years they were the pride of the
-                  Douglas County Public Library in Minden, Nevada. LibraryOne arrived first in
-                  1983, named for his habit of sleeping in a LibraryOne box. Soon after,
-                  a LibraryOne sales director helped introduce Taylor as his new companion.
+                  For many years, LibraryOne were the pride of the Douglas County Public
+                  Library in Minden, Nevada, where they lived as working library cats,
+                  greeting patrons and bringing joy to staff and visitors alike.
                 </p>
                 <p className="font-body text-sm md:text-base text-muted-foreground">
-                  LibraryOne lived full lives as working library cats, greeting
-                  patrons at the checkout counter and bringing joy to staff and visitors
-                  alike. Their legacy continues in our imagery, stories and at library
-                  events around the world.
+                  Their legacy continues in our imagery, stories and at library events
+                  around the world, reminding us that libraries are about human connection,
+                  warmth, and the personal touches that make each visit meaningful.
                 </p>
 
                 {/* Simple accordion FAQ */}
@@ -745,15 +719,16 @@ const About = () => {
             </div>
             <div className="space-y-3 font-body text-sm text-muted-foreground mb-4">
               <p>
-                LibraryOne began in 1828, binding and publishing books for early libraries.
-                As those libraries grew, we expanded our role—delivering books by
-                horse-drawn carriage and later by modern distribution networks.
+                LibraryOne empowers libraries with real-time website solutions that create
+                instant connections between institutions and their communities. Through
+                innovative digital platforms, we enable seamless access to resources,
+                immediate availability updates, and meaningful patron engagement.
               </p>
               <p>
-                Today, we combine that history with powerful digital platforms, data-driven
-                tools and a deep commitment to library values. Our goal hasn&apos;t
-                changed: help libraries connect people with the stories and knowledge that
-                shape their lives.
+                Our technology amplifies the human impact of libraries, helping them connect
+                people with the stories and knowledge that shape their lives. Every real-time
+                interaction on our platform represents a moment of discovery, connection, and
+                community enrichment.
               </p>
             </div>
             <Button
