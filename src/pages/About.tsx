@@ -138,7 +138,7 @@ const About = () => {
                   Empowering Libraries
                 </h1>
                 <p className="font-body text-base md:text-lg text-card/85 mb-4 max-w-xl">
-                  LibraryOne is the leading supplier of library content, software and services
+                  LibraryOne is a trusted supplier of library content, software and services
                   to public and academic libraries, partnering with thousands of institutions
                   to advance literacy and learning.
                 </p>
